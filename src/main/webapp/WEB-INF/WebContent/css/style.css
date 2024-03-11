@@ -1,0 +1,664 @@
+/*#region common*/
+
+@font-face {
+  font-family: 'Muller';
+  src: url('WebContent/fonts/muller/MullerLight.woff2'),
+       url('WebContent/fonts/muller/MullerLight.woff');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('WebContent/fonts/muller/MullerRegular.woff2'),
+       url('WebContent/fonts/muller/MullerRegular.woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('WebContent/fonts/muller/MullerMedium.woff2'),
+       url('WebContent/fonts/muller/MullerMedium.woff');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('WebContent/fonts/muller/MullerBold.woff2'),
+       url('WebContent/fonts/muller/MullerBold.woff');
+  font-weight: 700;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muller', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  outline: none;
+  border: none;
+  padding: 0;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+/*#endregion common*/
+
+/*#region global*/
+
+.title-page {
+  margin: 20px 0;
+  font-weight: 700;
+  text-align: center;
+  color: rgb(157, 107, 204);
+}
+
+.nowarp {
+  white-space: nowrap
+}
+
+/*#endregion global*/
+
+/*#region HEADER*/
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 10px 40px 15px 40px;
+  box-shadow: 0px 1px 0px 0px rgba(157, 107, 204, 0.4);
+}
+
+/*#region left-header*/
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 6px;
+  margin-right: 10px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: .8em;
+}
+
+.logo:hover {
+  -webkit-text-stroke: 1px blueviolet;
+  color: rgb(255, 255, 255);
+  transition: color 0.1s ease-in-out;
+}
+
+.logo-link {
+  color: rgb(157, 107, 204);
+}
+
+.logo-link:hover {
+  transition: all 0.2s;
+  -webkit-text-stroke: 1px rgb(157, 107, 204);
+  color: white;
+}
+
+.shops-header {
+  height: 50px;
+  width: 210px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 2px solid rgb(157, 107, 204);
+  color: rgb(157, 107, 204);
+}
+
+.shops-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: rgb(151, 55, 240);
+}
+
+.shops-link:hover {
+  transition: all 0.2s;
+  color: white;
+}
+
+.shops-header:hover {
+  transition: all 0.2s;
+  background-color: rgb(157, 107, 204);
+}
+
+.search {
+  width: 100%;
+}
+
+.search-input {
+  padding: 16px;
+  width: 100%;
+  height: 50px;
+  border: 2px solid rgb(157, 107, 204);
+  border-radius: 50px;
+}
+
+.search-input:target {
+  border-color: rgb(157, 107, 204);
+}
+
+/*#endregion left-header*/
+
+/*#region right-header*/
+
+.right-header {
+  display: flex;
+}
+
+.left-header {
+  display: flex;
+  width: 100%;
+  margin-right: 10px;
+}
+
+.header-nav-item {
+  text-align: center;
+  position: relative;
+}
+
+.header-nav-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.nav-item-link {
+  display: flex;
+  font-size: 14px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-item-img {
+  -webkit-text-stroke: 1px blueviolet;
+  margin-bottom: 5px;
+  color: rgb(255, 255, 255);
+}
+
+.nav-item-img:hover {
+  color: blueviolet;
+  transition: color 0.2s;
+}
+
+.nav-item-text {
+  color: rgb(157, 107, 204);
+}
+
+.cart-count {
+  position: absolute;
+  bottom: 35px;
+  background-color: crimson;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  right: 12px;
+  color: white;
+  padding-top: 1px;
+}
+
+.dcbalance {
+  color: rgb(157, 107, 204);
+  text-align: center;
+}
+
+/*#endregion right-header*/
+
+/*#endregion HEADER*/
+
+/*#region recommend-goods*/
+
+.main {
+  margin: 20px auto;
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center
+}
+
+.goods-list {
+  margin: 0 auto;
+  max-width: 1250px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  row-gap: 25px;
+  padding: 0 25px;
+}
+
+.good {
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+}
+
+.good-img {}
+
+.good-preview {
+  position: relative;
+  height: 300px;
+  width: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.img {
+  border-radius: 12px;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+}
+
+.heart:hover,
+.good-name-link:hover {}
+
+.price {
+  margin-bottom: 15px;
+}
+
+.heart-box {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
+.heart {
+  width: 100%;
+  height: 100%;
+  color: rgb(157, 107, 204);
+}
+
+.heart:hover {
+  transition: all .2s;
+  color: rgb(230, 62, 62);
+}
+
+.grey-box {
+  top: 0;
+  left: 0;
+  border-radius: 12px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(118, 118, 118, 0.1);
+}
+
+.good-info-name {
+  margin-bottom: 5px;
+}
+
+.buy-btn {
+  margin: auto;
+  background-color: rgb(157, 107, 204);
+  color: #fff;
+  width: 50%;
+  padding: 6px 15px 5px 15px;
+  border-radius: 15px;
+}
+
+.buy-btn:hover {
+  background-color: rgb(151, 55, 240);
+  transition: all 0.3s;
+}
+
+.good-name-link {
+  color: black;
+}
+
+
+/* #endregion recommend-goods*/
+
+/* #region FOOTER */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+.footer {
+  margin-top: 150px;
+  position: relative;
+  /* bottom: 0px; */
+  width: 100%;
+  background: #7546ff;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("WebContent/images/purple_wave.jpg");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@media(max-width:1000px) {
+  .header {
+    flex-wrap: wrap;
+    max-height: 170px;
+  }
+}
+/* #endregion FOOTER */
+
+.good-category {
+  display: flex;
+  width: 100%;
+}
+
+.good-category .sort {
+  min-width: 200px;
+  width: 15%;
+  height: 50vh;
+}
+
+.good-category .name input {
+  height: 35px;
+  border: 1px solid #a7a7a7;
+  border-radius: 10px;
+  padding-left: 10px;
+  outline: none;
+  width: 100%;
+}
+
+.good-category .goods {
+  width: 85%;
+  margin-left: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.good-category .price {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+.good-category .price span {
+  font-size: 12px;
+}
+
+.good-category .price input {
+  width: 50%;
+  --mixin-calculated-line-height: 20px;
+  background: transparent;
+  font-size: 14px;
+  letter-spacing: -.02em;
+  line-height: 20px;
+  border: none;
+  outline: none;
+}
+
+.good-category .name {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px 20px 10px;
+}
+
+.price label {
+  background: transparent;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #a7a7a7;
+  width: 48%;
+}
+
+.good-category .name label {
+  font-size: 1.2em;
+}
+
+.prefix {
+  margin-right: 12px;
+}
+
+.search-goods {
+  display: flex;
+  justify-content: center;
+}
+
+.sort button {
+  margin: 15px 0px 15px 10px;
+  height: 35px;
+  width: 80%;
+  border: 1px solid #a7a7a7;
+  background-color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.sort button:hover {
+  transition: 0.15s;
+  background-color: #7546ff;
+  color: #fff;
+  border-color: #7546ff;
+}
+
+.good-top .good-img {
+  height: 400px;
+}
+
+.good-top {
+  display: flex;
+  justify-content: center;
+}
+
+.good-top .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.good-top .structure {
+  max-width: 200px;
+}
+
+.good-top span,
+.good-top .good-buttons {
+  margin: 10px 20px;
+}
+
+.good-top .top-info {
+  font-size: 2em;
+}
+
+.good .good-definition {
+  font-size: 1.5em;
+}
+
+.good-top .good-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.good-buttons input {
+  width: 150px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: white;
+  font-size: 1.2em;
+}
+
+.good-buttons input:hover {
+  transition: .2s;
+  border-color: #7546ff;
+  background-color: #7546ff;
+  color: white;
+}
+
+.good-buttons .img {
+  background-color: white;
+  color: white;
+  -webkit-text-stroke: 1px black;
+}
+
+.good-buttons .img:hover {
+  transition: .2s;
+  color: #7546ff;
+  -webkit-text-stroke: 1px #7546ff;
+}
+
+.title-page-good {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  color: #7546ff;
+}
+
+.title-page-good a {
+  padding: 0px 10px;
+  color: #7546ff;
+}
+
+.title-page-good a:hover {
+  text-decoration: underline;
+  transition: .1s;
+  color: #632fff;
+}
