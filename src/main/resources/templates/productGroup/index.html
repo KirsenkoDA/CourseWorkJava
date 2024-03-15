@@ -5,15 +5,16 @@
         <title>Справочник групп товаров</title>
     </head>
     <body>
-    <table>
-        <tr>
-            <th>Код</th>
-            <th>Наименование</th>
-        </tr>
-        <tr th:each="productGroup : ${productGroups}">
-            <td><a th:text="${productGroup.getId()}">products</a></td>
-            <td><a th:text="${productGroup.getName()}">products</a></td>
-        </tr>
-    </table>
+        <table>
+            <tr>
+                <th>Код</th>
+                <th>Наименование</th>
+            </tr>
+            <tr th:each="productGroup : ${productGroups}">
+                <td><a th:text="${productGroup.getId()}">products</a></td>
+                <td><a th:href="@{/productGroups/{id}(id=${productGroup.getId()})}" th:text="${productGroup.getName()}">products</a></td>
+            </tr>
+        </table>
+        <a th:href="@{/productGroups/new}">Добавить группу товаров</a>
     </body>
 </html>
