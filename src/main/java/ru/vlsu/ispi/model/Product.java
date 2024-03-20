@@ -11,7 +11,7 @@ public class Product {
     private Long id;
     @Column(name = "product_name")
     private String name;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     private ProductGroup productGroup;
 
     public Long getId() {

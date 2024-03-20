@@ -13,7 +13,7 @@ public class ProductGroup {
     private Long id;
     @Column(name = "product_group_name")
     private String name;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "productGroup")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "productGroup")
     private List<Product> product = new ArrayList<>();
 
     public Long getId() {

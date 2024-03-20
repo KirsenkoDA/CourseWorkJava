@@ -13,7 +13,6 @@
     <tr th:each="product : ${products}">
       <td><a th:text="${product.getId()}">products</a></td>
       <td><a th:href="@{/products/{id}(id=${product.getId()})}" th:text="${product.getName()}">products</a></td>
-      <td><a th:text="${product.getProductGroup().getName()}">products</a></td>
     </tr>
   </table>
   <a th:href="@{/products/new}">Добавить товар</a>

@@ -12,11 +12,11 @@
 
 <h1>Добавить новый товар</h1>
 
-<form class="mb-3" th:action="@{/products/}" th:method="POST" th:object="${product}">
+<form class="mb-3" th:action="@{/products/}" th:method="POST" th:object="${createProductDTO}">
     <label for="name" class="form-label">Наименование: </label>
     <input class="form-control" th:field="*{name}" type="text" id="name"/>
-    <label for="poductGroup" class="form-label">Группа товара: </label>
-    <select class="form-select" th:field="*{productGroup}" id="poductGroup", name="poductGroup">
+    <label for="productGroup" class="form-label">Группа товара: </label>
+    <select class="form-select" th:field="*{groupId}" id="productGroup" name="productGroup">
         <option th:each="ProductGroup : ${groups}" th:value="${ProductGroup.getId()}" th:text="${ProductGroup.getName()}">
         </option>
     </select>

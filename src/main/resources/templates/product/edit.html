@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:charset="UTF-8">
+  <head>
+    <title>Изменение товара</title>
+  </head>
+  <body>
+  <h1>Изменить товар</h1>
+  <form th:action="@{/products/update}" class="mb-3" th:method="POST" th:object="${editProductDTO}">
+    <label class="form-label" for="id">Код: </label>
+    <input th:field="*{id}" class="form-control" type="text" th:value="${product.getId()}" id="id"/>
+    <br><br>
+    <label class="form-label" for="name">Наименование: </label>
+    <input th:field="*{name}" class="form-control" type="text" th:value="${product.getName()}" id="name"/>
+    <br><br>
+    <select class="form-select" th:field="*{groupId}" id="productGroup" name="productGroup">
+      <option th:each="ProductGroup : ${groups}" th:value="${ProductGroup.getId()}" th:text="${ProductGroup.getName()}"></option>
+    </select>
+    <br><br>
+    <input type="submit" class="btn btn-success" value="Изменить товар"/>
+  </form>
+  </body>
+</html>
