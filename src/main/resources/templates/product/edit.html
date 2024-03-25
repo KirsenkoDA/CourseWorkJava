@@ -15,6 +15,12 @@
     <select class="form-select" th:field="*{groupId}" id="productGroup" name="productGroup">
       <option th:each="ProductGroup : ${groups}" th:value="${ProductGroup.getId()}" th:text="${ProductGroup.getName()}"></option>
     </select>
+    <table>
+      <tr th:each="characteristic: ${characteristics}">
+        <td><input  type="checkbox" th:field="*{characteristicList}" th:value="${characteristic.getId()}"></td>
+        <td><label class="form-label" th:text="${characteristic.getName()}"></label></td>
+      </tr>
+    </table>
     <br><br>
     <input type="submit" class="btn btn-success" value="Изменить товар"/>
   </form>

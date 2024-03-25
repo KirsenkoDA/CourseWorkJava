@@ -5,9 +5,8 @@ import org.springframework.stereotype.Repository;
 import ru.vlsu.ispi.model.Characteristic;
 import ru.vlsu.ispi.model.Product;
 
-import java.util.HashSet;
 import java.util.List;
-
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface CharacteristicRepository extends JpaRepository<Characteristic, Long> {
+    List<Characteristic> findAllByProductsOrderByName(Product product);
 }

@@ -3,6 +3,7 @@ package ru.vlsu.ispi.service;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.vlsu.ispi.model.Characteristic;
 import ru.vlsu.ispi.model.Product;
 import ru.vlsu.ispi.repository.ProductRepository;
 

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <title>lab3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+<div id = "navigation" th:insert="parts/navbar :: navigation"></div>
+<h1>Найти характеристики по продукту</h1>
+<table>
+    <tr>
+        <th>Код</th>
+        <th>Наименование</th>
+    </tr>
+    <tr th:each="characteristic : ${characteristics}">
+        <td><a th:text="${characteristic.getId()}">products</a></td>
+        <td><a th:text="${characteristic.getName()}">products</a></td>
+    </tr>
+</table>
+</body>
+</html>

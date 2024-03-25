@@ -1,6 +1,8 @@
 package ru.vlsu.ispi.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "product_table")
@@ -13,6 +15,15 @@ public class Product {
     private String name;
     @ManyToOne(fetch = FetchType.LAZY)
     private ProductGroup productGroup;
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
+    @JoinTable(name = "product_characteristic",
+            joinColumns = { @JoinColumn(name = "product_id") },
+            inverseJoinColumns = { @JoinColumn(name = "characteristic_id") })
+    private Set<Characteristic> characteristics = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -36,5 +47,13 @@ public class Product {
 
     public void setProductGroup(ProductGroup productGroup) {
         this.productGroup = productGroup;
+    }
+
+    public Set<Characteristic> getCharacteristics() {
+        return characteristics;
+    }
+
+    public void setCharacteristics(Set<Characteristic> characteristics) {
+        this.characteristics = characteristics;
     }
 }
